@@ -24,7 +24,7 @@ white_sum = 0
 black_sum = 0
 white_count = 0
 black_count = 0
-time_limit = 0.5
+time_limit = 0.2
 for move in game.mainline_moves():
     # First play the best move
     best = engine.play(board, chess.engine.Limit(time=time_limit))
