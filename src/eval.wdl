@@ -29,7 +29,7 @@ task EvalGame {
     }
 
     command <<<
-        python eval.py {pgn_file} {offset}
+        python /root/eval.py {pgn_file} {offset}
 
     >>>
     
