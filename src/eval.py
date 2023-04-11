@@ -1,4 +1,5 @@
 import argparse
+import sys
 import chess.pgn
 import chess.engine
 
@@ -24,7 +25,7 @@ white_sum = 0
 black_sum = 0
 white_count = 0
 black_count = 0
-time_limit = 0.2
+time_limit = 0.5
 for move in game.mainline_moves():
     # First play the best move
     best = engine.play(board, chess.engine.Limit(time=time_limit))
@@ -52,13 +53,15 @@ for move in game.mainline_moves():
         black_count += 1
         color = chess.WHITE
 
+engine.quit()
+
 white_avg_centipawn_loss = white_sum / white_count
 black_avg_centipawn_loss = black_sum / black_count
 print(f"White avg centipawn loss: {white_avg_centipawn_loss}")
 print(f"Black avg centipawn loss: {black_avg_centipawn_loss}")
 
 with open('white_avg_centipawn_loss.txt', 'w') as f:
-    f.write(white_avg_centipawn_loss)
+    f.write(str(white_avg_centipawn_loss))
 
 with open('black_avg_centipawn_loss.txt', 'w') as f:
-    f.write(black_avg_centipawn_loss)
+    f.write(str(black_avg_centipawn_loss))

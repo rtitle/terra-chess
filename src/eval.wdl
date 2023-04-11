@@ -34,7 +34,7 @@ task EvalGame {
     
 
     runtime {
-        docker: "us.gcr.io/broad-dsp-gcr-public/rt-terra-chess:0.1"
+        docker: "us.gcr.io/broad-dsp-gcr-public/rt-terra-chess:0.2"
     }
 
     output {
