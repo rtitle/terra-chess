@@ -29,13 +29,13 @@ task EvalGame {
     }
 
     command <<<
-        python eval.py
+        python eval.py {pgn_file} {offset}
 
     >>>
     
 
     runtime {
-        docker: "broadinstitute/horsefish"
+        docker: "us.gcr.io/broad-dsp-gcr-public/rt-terra-chess"
     }
 
     output {
