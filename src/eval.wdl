@@ -17,8 +17,8 @@ workflow ChessEval {
     }
 
     output {
-        Int   white_avg_centipawn_loss = CalculateAverage.white_avg_centipawn_loss
-        Int   black_avg_centipawn_loss = CalculateAverage.black_avg_centipawn_loss
+        Int   white_avg_centipawn_loss = EvalGame.white_avg_centipawn_loss
+        Int   black_avg_centipawn_loss = EvalGame.black_avg_centipawn_loss
     }
 }
 
