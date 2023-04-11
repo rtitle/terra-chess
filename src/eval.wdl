@@ -17,8 +17,8 @@ workflow ChessEval {
     }
 
     output {
-        Int   white_avg_centipawn_loss = EvalGame.white_avg_centipawn_loss
-        Int   black_avg_centipawn_loss = EvalGame.black_avg_centipawn_loss
+        Float   white_avg_centipawn_loss = EvalGame.white_avg_centipawn_loss
+        Float   black_avg_centipawn_loss = EvalGame.black_avg_centipawn_loss
     }
 }
 
@@ -38,7 +38,7 @@ task EvalGame {
     }
 
     output {
-        Int white_avg_centipawn_loss = read_int("white_avg_centipawn_loss.txt")
-        Int black_avg_centipawn_loss = read_int("black_avg_centipawn_loss.txt")
+        Float white_avg_centipawn_loss = read_float("white_avg_centipawn_loss.txt")
+        Float black_avg_centipawn_loss = read_float("black_avg_centipawn_loss.txt")
     }
 }
