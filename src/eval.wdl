@@ -12,7 +12,7 @@ workflow ChessEval {
 
     call EvalGame {
         input:
-            offset      = offset
+            offset      = offset,
             pgn_file    = pgn_file
     }
 
