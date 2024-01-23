@@ -17,8 +17,8 @@ workflow ChessEval {
     }
 
     output {
-        Float   white_avg_centipawn_loss = EvalGame.white_avg_centipawn_loss
-        Float   black_avg_centipawn_loss = EvalGame.black_avg_centipawn_loss
+        Float   white_accuracy = EvalGame.white_accuracy
+        Float   black_accuracy = EvalGame.black_accuracy
     }
 }
 
@@ -34,11 +34,11 @@ task EvalGame {
     
 
     runtime {
-        docker: "us.gcr.io/broad-dsp-gcr-public/rt-terra-chess:0.2"
+        docker: "us.gcr.io/broad-dsp-gcr-public/rt-terra-chess:0.3"
     }
 
     output {
-        Float white_avg_centipawn_loss = read_float("white_avg_centipawn_loss.txt")
-        Float black_avg_centipawn_loss = read_float("black_avg_centipawn_loss.txt")
+        Float white_accuracy = read_float("white_accuracy.txt")
+        Float black_accuracy = read_float("black_accuracy.txt")
     }
 }
